@@ -2,7 +2,7 @@ import { chromium } from "@playwright/test";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const baseURL = process.env.PREVIEW_URL || "http://127.0.0.1:5173";
+const baseURL = process.env.PREVIEW_URL || "http://127.0.0.1:5173/V2-Khmer-Invitation.github.io/";
 const root = path.resolve("output", "qa");
 const edgeCandidates = [
   "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",

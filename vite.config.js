@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/Khmer-Invitation.github.io/",
+  base: "/V2-Khmer-Invitation.github.io/",
 });
