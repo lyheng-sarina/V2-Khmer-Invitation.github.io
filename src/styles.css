@@ -155,7 +155,12 @@ button { color: inherit; font: inherit; }
 .ceremonial { margin: 0; padding: .3em .25em .2em; font-family: "Moul", serif; font-size: clamp(1.1rem, 4.6vw, 1.75rem); line-height: 2.05; background: var(--foil); background-clip: text; -webkit-background-clip: text; color: transparent; filter: drop-shadow(0 2px 7px rgba(0,0,0,.68)); }
 .name-logo--hero { width: min(500px, 86vw, 52svh); height: clamp(132px, 20svh, 190px); font-size: clamp(1rem, 4.8vw, 2rem); flex: 0 0 auto; margin: .2rem 0 0; filter: drop-shadow(0 4px 16px rgba(0,0,0,.62)); }
 .name-logo--hero .logo-crest { width: 22%; left: 39%; }
-.english-names { display: flex; align-items: center; gap: clamp(9px, 2.6vw, 24px); margin-top: -.6rem; font: 600 clamp(1.05rem, 3.2vw, 1.65rem)/1.1 "Cormorant Garamond", serif; letter-spacing: .06em; text-transform: uppercase; color: #f8df9a; text-shadow: 0 2px 10px rgba(0,0,0,.68); }
+@media (min-width: 900px) {
+  .name-logo--hero { width: min(100%, clamp(132rem, 28vw, 35rem)); }
+  .name-logo--hero .logo-name--groom { top: calc(1% - 26px); }
+  .name-logo--hero .logo-name--bride { bottom: -16px; }
+}
+.english-names { display: flex; align-items: center; gap: clamp(9px, 2.6vw, 24px); margin-top: .1rem; font: 600 clamp(1.05rem, 3.2vw, 1.65rem)/1.1 "Cormorant Garamond", serif; letter-spacing: .06em; text-transform: uppercase; color: #f8df9a; text-shadow: 0 2px 10px rgba(0,0,0,.68); }
 .english-names i { font: 400 1.35em/1 "Pinyon Script", cursive; color: #d1ac5b; }
 .respect { margin: .35rem 0 0; padding: .3em .2em .22em; font-family: "Khmer OS Muol Light", serif; font-size: clamp(1rem, 3.6vw, 1.3rem); line-height: 2; color: #f1e5c8; text-shadow: 0 1px 8px rgba(0,0,0,.7); }
 .date-row { width: min(460px, 100%); display: grid; grid-template-columns: repeat(4, 1fr); margin: .75rem 0 .45rem; border-top: 1px solid rgba(217,177,90,.5); border-bottom: 1px solid rgba(217,177,90,.5); background: rgba(14,12,8,.28); backdrop-filter: blur(2px); }

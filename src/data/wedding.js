@@ -2,8 +2,8 @@ const assetUrl = (file) => `${import.meta.env.BASE_URL}assets/${file}`;
 
 export const wedding = {
   couple: {
-    groom: { kh: "ជា លីហេង", shortKh: "លីហេង", en: "CHEA LYHENG" },
-    bride: { kh: "រ៉ន សារីណា", shortKh: "សារីណា", en: "RAN SARIANA" },
+    groom: { kh: "ជា លីហេង", shortKh: "ជា លីហេង", en: "CHEA LYHENG" },
+    bride: { kh: "រ៉ន សារីណា", shortKh: "រ៉ន សារីណា", en: "RAN SARIANA" },
   },
   parents: {
     groom: { father: "ជា សែម", mother: "ហ៊ឹម សុធីតា" },
