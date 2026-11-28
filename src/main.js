@@ -452,9 +452,30 @@ document.querySelector("#app").innerHTML = `
 
     <section class="gift-section" id="gift" aria-labelledby="gift-title" style="--section10-background:url('${wedding.assets.section10Background}')">
       <div class="section-shell gift-shell">
-        ${crest("section-crest")}
-        <h2 class="section-title lang-km" id="gift-title">${copy.km.gift}</h2><h2 class="section-title lang-en">${copy.en.gift}</h2>
-        <p class="gift-body lang-km">${copy.km.giftBody}</p><p class="gift-body lang-en">${copy.en.giftBody}</p>
+        <header class="gift-heading">
+          ${crest("section-crest")}
+          <h2 class="section-title lang-km" id="gift-title">${copy.km.gift}</h2><h2 class="section-title lang-en">${copy.en.gift}</h2>
+          <p class="gift-body lang-km">${copy.km.giftBody}</p><p class="gift-body lang-en">${copy.en.giftBody}</p>
+        </header>
+        <div class="gift-qr-grid">
+          ${wedding.gifts.map((gift, index) => {
+            const person = wedding.couple[gift.person];
+            return `
+              <article class="gift-qr-card">
+                <a class="gift-qr-image" href="${gift.image}" target="_blank" rel="noreferrer" aria-label="Open ${person.en} QR code">
+                  <img src="${gift.image}" alt="ABA KHQR for ${person.en}" loading="lazy" width="3720" height="5244" />
+                </a>
+                <div class="gift-qr-details">
+                  <span class="gift-qr-bank">ABA PAY · KHQR</span>
+                  <strong><span class="lang-km">${person.kh}</span><span class="lang-en">${person.en}</span></strong>
+                  <a class="gift-save-button" href="${gift.image}" download="KHQR-${index + 1}.JPG">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
+                    <span class="lang-km">${copy.km.saveQr}</span><span class="lang-en">${copy.en.saveQr}</span>
+                  </a>
+                </div>
+              </article>`;
+          }).join("")}
+        </div>
       </div>
     </section>
 

@@ -3,7 +3,7 @@ const assetUrl = (file) => `${import.meta.env.BASE_URL}assets/${file}`;
 export const wedding = {
   couple: {
     groom: { kh: "ជា លីហេង", shortKh: "ជា លីហេង", en: "CHEA LYHENG" },
-    bride: { kh: "រ៉ន សារីណា", shortKh: "រ៉ន សារីណា", en: "RAN SARIANA" },
+    bride: { kh: "រ៉ន សារីណា", shortKh: "រ៉ន សារីណា", en: "RAN SARINA" },
   },
   parents: {
     groom: { father: "ជា សែម", mother: "ហ៊ឹម សុធីតា" },
@@ -112,7 +112,10 @@ export const wedding = {
     altKh: `រូបថតមុនថ្ងៃមង្គល ${index + 1}`,
     altEn: `Pre-wedding portrait ${index + 1}`,
   })),
-  gifts: { khqr: null, aba: null },
+  gifts: [
+    { image: assetUrl("KHQR-1.JPG"), person: "bride" },
+    { image: assetUrl("KHQR-2.JPG"), person: "bride" },
+  ],
   assets: {
     hero: assetUrl("pre-wedding-2000.webp"),
     section2: assetUrl("picture-on-section2.jpg"),

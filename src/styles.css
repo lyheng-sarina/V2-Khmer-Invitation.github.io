@@ -443,10 +443,25 @@ button { color: inherit; font: inherit; }
 .map-button-label { position: relative; z-index: 1; min-width: 0; }
 .gold-button.is-disabled { opacity: .45; pointer-events: none; }
 
-.gift-section { padding: clamp(110px, 14vw, 160px) 0; color: #eee3c8; background: linear-gradient(rgba(28,32,20,.86),rgba(17,19,13,.96)),var(--section10-background) center 65%/cover; text-align: center; }
-.gift-shell { max-width: 780px; transform: translateY(clamp(-70px, -5vw, -36px)); }
-.gift-section .section-title { color: #d8b664; }
-.gift-body {  font-family: "Khmer OS Battambang", serif; max-width: 590px; margin: 12px auto 38px; line-height: 1.9; color: rgba(240,228,200,.66); }
+.gift-section { padding: clamp(88px, 11vw, 140px) 18px; color: #eee3c8; background: radial-gradient(circle at 50% 18%,rgba(201,161,73,.12),transparent 30%),linear-gradient(rgba(19,23,14,.9),rgba(10,13,8,.97)),var(--section10-background) center 65%/cover; text-align: center; }
+.gift-shell { width: min(920px,100%); max-width: none; }
+.gift-heading { position: relative; display: grid; justify-items: center; margin-bottom: clamp(32px,6vw,54px); }
+.gift-heading .section-crest { width: clamp(76px,10vw,104px); margin-bottom: 6px; filter: drop-shadow(0 8px 18px rgba(0,0,0,.32)); }
+.gift-section .section-title { margin: 0; color: #d8b664; }
+.gift-body { max-width: 640px; margin: 12px auto 0; font-family: "Kantumruy Pro",sans-serif; font-size: clamp(.92rem,2.8vw,1.02rem); line-height: 1.95; color: rgba(247,237,212,.76); text-wrap: pretty; }
+.gift-qr-grid { display: grid; grid-template-columns: repeat(2,minmax(0,330px)); justify-content: center; gap: clamp(22px,5vw,44px); }
+.gift-qr-card { position: relative; overflow: hidden; border: 1px solid rgba(220,183,94,.55); border-radius: 4px; background: linear-gradient(145deg,rgba(41,47,29,.97),rgba(15,19,11,.98)); box-shadow: inset 0 1px rgba(255,240,197,.1),0 24px 52px rgba(0,0,0,.36); }
+.gift-qr-card::before { content: ""; position: absolute; z-index: 2; inset: 8px; border: 1px solid rgba(230,198,122,.16); pointer-events: none; }
+.gift-qr-image { position: relative; display: block; margin: 12px 12px 0; overflow: hidden; background: #fff; }
+.gift-qr-image img { display: block; width: 100%; height: auto; transition: transform .45s ease; }
+.gift-qr-image:hover img,.gift-qr-image:focus-visible img { transform: scale(1.015); }
+.gift-qr-image:focus-visible,.gift-save-button:focus-visible { outline: 2px solid #f0d48c; outline-offset: 3px; }
+.gift-qr-details { position: relative; z-index: 3; display: grid; justify-items: center; gap: 5px; padding: 20px 18px 24px; }
+.gift-qr-bank { font: 600 .72rem/1.4 "Cormorant Garamond",serif; letter-spacing: .15em; color: rgba(222,189,110,.72); }
+.gift-qr-details strong { min-height: 1.7em; font-family: "Khmer OS Battambang",sans-serif; font-size: .9rem; font-weight: 500; line-height: 1.7; color: #f3e8cb; }
+.gift-save-button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; margin-top: 8px; padding: 9px 18px; border: 1px solid rgba(218,182,95,.56); border-radius: 999px; color: #efd58f; background: rgba(222,183,92,.06); font-family: "Kantumruy Pro",sans-serif; font-size: .85rem; line-height: 1.5; text-decoration: none; transition: color .25s ease,background .25s ease,transform .25s ease; }
+.gift-save-button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.gift-save-button:hover { color: #17200f; background: #d9b963; transform: translateY(-2px); }
 
 .finale-section { min-height: max(112svh, 820px); display: grid; place-items: center; padding: 120px 16px 80px; color: #f0e4c9; background: #0a0c08; text-align: center; }
 .finale-photo { position: absolute; inset: 0; background: linear-gradient(rgba(6,7,5,.68),rgba(6,7,5,.96)), var(--finale-photo) center/contain no-repeat; filter: saturate(.62); }
@@ -479,87 +494,21 @@ button { color: inherit; font: inherit; }
   .gift-section {
     min-height: 100svh;
     display: grid;
-    align-items: start;
-    padding: clamp(86px, 11svh, 122px) 24px 80px;
+    align-items: center;
+    padding: clamp(82px, 10svh, 120px) 24px;
     background-image: linear-gradient(90deg, rgba(8,10,6,.44), transparent 24%, transparent 76%, rgba(8,10,6,.44)), linear-gradient(180deg, rgba(9,11,7,.78), rgba(9,11,7,.32) 48%, rgba(9,11,7,.42)), var(--section10-background);
     background-position: center, center, center 77%;
     background-size: cover;
     background-repeat: no-repeat;
   }
   .gift-shell {
-    width: min(900px, calc(100% - 48px));
-    max-width: none;
-    display: grid;
-    grid-template-columns: minmax(190px, .72fr) minmax(0, 1.55fr);
-    grid-template-rows: auto auto;
-    align-items: center;
-    column-gap: clamp(34px, 4vw, 58px);
-    padding: clamp(34px, 4vw, 48px) clamp(38px, 5vw, 64px);
-    overflow: hidden;
-    border: 1px solid rgba(227,191,106,.58);
-    background: radial-gradient(circle at 13% 15%, rgba(218,179,85,.16), transparent 34%), linear-gradient(135deg, rgba(26,31,19,.9), rgba(10,13,8,.84));
-    box-shadow: inset 0 1px rgba(255,239,194,.08), 0 28px 70px rgba(0,0,0,.4);
+    padding: clamp(34px,4vw,52px);
+    border: 1px solid rgba(227,191,106,.36);
+    background: radial-gradient(circle at 50% 0,rgba(218,179,85,.13),transparent 35%),linear-gradient(135deg,rgba(24,29,17,.88),rgba(8,11,6,.82));
+    box-shadow: inset 0 1px rgba(255,239,194,.07),0 30px 76px rgba(0,0,0,.38);
     backdrop-filter: blur(7px);
-    transform: none;
-    text-align: left;
-    isolation: isolate;
   }
-  .gift-shell::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: 10px;
-    border: 1px solid rgba(235,206,137,.17);
-    pointer-events: none;
-  }
-  .gift-shell::after {
-    content: "✦";
-    position: absolute;
-    right: 24px;
-    bottom: 13px;
-    color: rgba(229,196,119,.46);
-    font-size: .72rem;
-    pointer-events: none;
-  }
-  .gift-shell > .section-crest {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center;
-    width: clamp(92px, 9vw, 116px);
-    margin-bottom: 8px;
-    filter: drop-shadow(0 8px 17px rgba(0,0,0,.3));
-  }
-  .gift-section .section-title {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: start;
-    margin: 0;
-    padding: .28em .1em .22em;
-    font-size: clamp(1.52rem, 2.45vw, 2rem);
-    line-height: 1.8;
-    text-align: center;
-    background: var(--foil);
-    background-size: 220% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    filter: drop-shadow(0 2px 10px rgba(0,0,0,.42));
-  }
-  .gift-body {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    align-self: center;
-    max-width: none;
-    margin: 0;
-    padding: 12px 0 12px clamp(30px, 4vw, 48px);
-    border-left: 1px solid rgba(224,188,103,.38);
-    font-family: "Kantumruy Pro", sans-serif;
-    font-size: clamp(.96rem, 1.2vw, 1.08rem);
-    line-height: 2.05;
-    color: rgba(248,238,214,.88);
-    text-align: left;
-    text-wrap: pretty;
-  }
+  .gift-heading { margin-bottom: 38px; }
 
   .finale-section {
     min-height: max(100svh, 860px);
@@ -632,6 +581,8 @@ button { color: inherit; font: inherit; }
 }
 
 @media (max-width: 680px) {
+  .gift-section { padding-inline: 14px; }
+  .gift-qr-grid { grid-template-columns: minmax(0,330px); }
   .cover-photo { background-position: 44% 56%; }
   .couple-section { --section3-background-position: 42% center; }
   .formal-grid { gap: 28px; }
